@@ -316,15 +316,84 @@ h1 {
   margin-bottom: 8px;
 }
 
-/* Make sure the Material Icons font is used and sized correctly */
-.material-icons-outlined.chatbot-icon {
-  font-family: 'Material Icons Outlined', 'Material Icons', Arial, sans-serif !important;
-  font-size: 32px !important;
+/* Styles to improve readability of assistant replies */
+.assistant-content {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.assistant-section {
+  margin-bottom: 0.9rem; /* space between logical sections */
+  line-height: 1.45;
+}
+
+/* Optional: slightly different background for assistant messages (chat bubble style) */
+.chat-message.assistant .message-content {
+  background: #f3f7fb;
+  color: #0f172a;
+  padding: 10px 12px;
+  border-radius: 10px;
+  max-width: 84%;
+  margin: 6px 0;
+}
+
+/* User message bubble style */
+.chat-message.user .message-content {
+  background: #0b5cff;
   color: #fff;
-  line-height: 1;
-  user-select: none;
-  pointer-events: none;
-  font-variation-settings: 'wght' 400;
+  padding: 10px 12px;
+  border-radius: 10px;
+  align-self: flex-end;
+  max-width: 84%;
+  margin: 6px 0;
+}
+
+/* Thinking animation: three dots that blink in sequence */
+.thinking-dots {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #4b5563; /* subtle gray */
+}
+.thinking-dots span {
+  display: inline-block;
+  opacity: 0.2;
+  animation: thinking-blink 1s infinite;
+  margin-right: 2px;
+}
+.thinking-dots span:nth-child(1) { animation-delay: 0s; }
+.thinking-dots span:nth-child(2) { animation-delay: 0.15s; }
+.thinking-dots span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes thinking-blink {
+  0%, 80%, 100% { opacity: 0.2; transform: translateY(0); }
+  40% { opacity: 1; transform: translateY(-3px); }
+}
+
+/* Ensure assistant messages have a distinct bubble style for readability */
+.chat-message.assistant .message-content {
+  background: #f3f7fb;
+  color: #0f172a;
+  padding: 10px 12px;
+  border-radius: 10px;
+  max-width: 84%;
+  margin: 6px 0;
+}
+
+/* User message bubble style */
+.chat-message.user .message-content {
+  background: #0b5cff;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  align-self: flex-end;
+  max-width: 84%;
+  margin: 6px 0;
+}
+
+/* spacing for assistant sections (already present but reiterated) */
+.assistant-section {
+  margin-bottom: 0.9rem;
+  line-height: 1.45;
 }
 
 /* Responsive styles */
